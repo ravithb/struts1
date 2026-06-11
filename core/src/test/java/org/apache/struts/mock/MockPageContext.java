@@ -552,18 +552,6 @@ public class MockPageContext extends PageContext {
     }
 
     @Override
-    @Deprecated
-    public jakarta.servlet.jsp.el.ExpressionEvaluator getExpressionEvaluator() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    @Deprecated
-    public jakarta.servlet.jsp.el.VariableResolver getVariableResolver() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public ELContext getELContext() {
         throw new UnsupportedOperationException();
     }

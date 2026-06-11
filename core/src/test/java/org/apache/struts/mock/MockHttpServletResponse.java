@@ -239,4 +239,14 @@ public class MockHttpServletResponse implements HttpServletResponse {
     public Locale getLocale() {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public void sendEarlyHints() {
+        throw new UnsupportedOperationException("Unimplemented method 'sendEarlyHints'");
+    }
+
+    @Override
+    public void sendRedirect(String arg0, int arg1, boolean arg2) throws IOException {
+        throw new UnsupportedOperationException("Unimplemented method 'sendRedirect'");
+    }
 }
