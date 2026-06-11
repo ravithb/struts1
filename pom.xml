@@ -375,7 +375,7 @@
         <propertiesEncoding>ISO-8859-1</propertiesEncoding>
         <project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
-        <mavenVersion>3.8.1</mavenVersion>
+        <mavenVersion>3.9.16</mavenVersion>
         <javaVersion>25</javaVersion>
         <javaTestVersion>25</javaTestVersion>
         <surefireVersion>3.5.6</surefireVersion>
