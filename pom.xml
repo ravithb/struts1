@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.ravithb.struts1</groupId>
     <artifactId>struts-parent</artifactId>
-    <version>1.7.9</version>
+    <version>1.7.10</version>
     <packaging>pom</packaging>
     <name>Struts 1</name>
     <url>https://weblegacy.github.io/struts1</url>
@@ -821,7 +821,39 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>2.21.0</version>
+                </plugin>                
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                    <configuration>
+                        <updatePomFile>true</updatePomFile>
+                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                        <pomElements>
+                            <parent>remove</parent>
+                            <build>remove</build>
+                            <reporting>remove</reporting>
+                            <profiles>remove</profiles>
+                        </pomElements>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>flatten</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>flatten</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>flatten-clean</id>
+                            <phase>clean</phase>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
