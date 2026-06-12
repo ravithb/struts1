@@ -21,9 +21,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.weblegacy</groupId>
+    <groupId>com.github.ravithb.struts1</groupId>
     <artifactId>struts-parent</artifactId>
-    <version>1.7.7</version>
+    <version>1.7.8</version>
     <packaging>pom</packaging>
     <name>Struts 1</name>
     <url>https://weblegacy.github.io/struts1</url>
