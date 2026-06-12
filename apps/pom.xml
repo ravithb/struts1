@@ -22,7 +22,7 @@
    <parent>
       <groupId>com.github.ravithb.struts1</groupId>
       <artifactId>struts-parent</artifactId>
-      <version>1.7.10</version>
+      <version>1.7.13</version>
    </parent>
 
    <modelVersion>4.0.0</modelVersion>
