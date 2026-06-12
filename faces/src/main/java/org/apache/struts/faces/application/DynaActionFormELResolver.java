@@ -252,73 +252,73 @@ public class DynaActionFormELResolver extends ELResolver {
         return false;
     }
 
-    /**
-     * If the base object is a {@code DynaActionForm}, returns an
-     * {@code Iterator} containing the set of keys available in the
-     * {@code DynaActionForm}. Otherwise, returns {@code null}.
-     *
-     * <p>The {@code Iterator} returned must contain zero or more
-     * instances of {@link FeatureDescriptor}. Each info object
-     * contains information about a key in the Map, and is initialized
-     * as follows:</p>
-     * <ul>
-     *     <li>displayName - The return value of calling the
-     *         {@code toString} method on this key, or {@code null} if
-     *         the key is {@code null}.</li>
-     *     <li>name - Same as displayName property.</li>
-     *     <li>shortDescription - JavaDoc-Code of
-     *         {@link DynaActionForm#getMap()}</li>
-     *     <li>expert - {@code false}</li>
-     *     <li>hidden - {@code false}</li>
-     *     <li>preferred - {@code true}</li>
-     * </ul>
-     * In addition, the following named attributes must be set in the
-     * returned {@code FeatureDescriptor}s:
-     * <ul>
-     *     <li>{@link ELResolver#TYPE} - The return value of calling
-     *         the {@code getClass()} method on this key, or
-     *         {@code null} if the key is {@code null}.</li>
-     *     <li>{@link ELResolver#RESOLVABLE_AT_DESIGN_TIME} -
-     *         {@code true}</li>
-     * </ul>
-     *
-     * @param context The context of this evaluation.
-     * @param base The object whose keys are to be iterated over. Only
-     *     bases of type {@code DynaActionForm} are handled by this
-     *     resolver.
-     *
-     * @return An {@code Iterator} containing zero or more (possibly
-     *     infinitely more) {@code FeatureDescriptor} objects, each
-     *     representing a key in this {@code DynaActionForm}, or
-     *     {@code null} if the base object is not a
-     *     {@code DynaActionForm}.
-     */
-    @Override
-    public Iterator<FeatureDescriptor> getFeatureDescriptors(
-            ELContext context,
-            Object base) {
+    // /**
+    //  * If the base object is a {@code DynaActionForm}, returns an
+    //  * {@code Iterator} containing the set of keys available in the
+    //  * {@code DynaActionForm}. Otherwise, returns {@code null}.
+    //  *
+    //  * <p>The {@code Iterator} returned must contain zero or more
+    //  * instances of {@link FeatureDescriptor}. Each info object
+    //  * contains information about a key in the Map, and is initialized
+    //  * as follows:</p>
+    //  * <ul>
+    //  *     <li>displayName - The return value of calling the
+    //  *         {@code toString} method on this key, or {@code null} if
+    //  *         the key is {@code null}.</li>
+    //  *     <li>name - Same as displayName property.</li>
+    //  *     <li>shortDescription - JavaDoc-Code of
+    //  *         {@link DynaActionForm#getMap()}</li>
+    //  *     <li>expert - {@code false}</li>
+    //  *     <li>hidden - {@code false}</li>
+    //  *     <li>preferred - {@code true}</li>
+    //  * </ul>
+    //  * In addition, the following named attributes must be set in the
+    //  * returned {@code FeatureDescriptor}s:
+    //  * <ul>
+    //  *     <li>{@link ELResolver#TYPE} - The return value of calling
+    //  *         the {@code getClass()} method on this key, or
+    //  *         {@code null} if the key is {@code null}.</li>
+    //  *     <li>{@link ELResolver#RESOLVABLE_AT_DESIGN_TIME} -
+    //  *         {@code true}</li>
+    //  * </ul>
+    //  *
+    //  * @param context The context of this evaluation.
+    //  * @param base The object whose keys are to be iterated over. Only
+    //  *     bases of type {@code DynaActionForm} are handled by this
+    //  *     resolver.
+    //  *
+    //  * @return An {@code Iterator} containing zero or more (possibly
+    //  *     infinitely more) {@code FeatureDescriptor} objects, each
+    //  *     representing a key in this {@code DynaActionForm}, or
+    //  *     {@code null} if the base object is not a
+    //  *     {@code DynaActionForm}.
+    //  */
+    // @Override
+    // public Iterator<FeatureDescriptor> getFeatureDescriptors(
+    //         ELContext context,
+    //         Object base) {
 
-        if (base instanceof DynaActionForm) {
-            log.trace("Get Feature-Descriptors for DynaActionForm '{}'", base);
+    //     if (base instanceof DynaActionForm) {
+    //         log.trace("Get Feature-Descriptors for DynaActionForm '{}'", base);
 
-            final FeatureDescriptor descriptor = new FeatureDescriptor();
-            descriptor.setName("map");
-            descriptor.setDisplayName("map");
-            descriptor.setExpert(false);
-            descriptor.setHidden(false);
-            descriptor.setPreferred(true);
-            descriptor.setShortDescription("Returns the Map containing the property "
-                    + "values. This is done mostly to facilitate accessing the "
-                    + "DynaActionForm through JavaBeans accessors, in order to use "
-                    + "the JavaServer Pages Standard Tag Library (JSTL).");
-            descriptor.setValue(TYPE, Map.class);
-            descriptor.setValue(RESOLVABLE_AT_DESIGN_TIME, Boolean.TRUE);
+    //         final FeatureDescriptor descriptor = new FeatureDescriptor();
+    //         descriptor.setName("map");
+    //         descriptor.setDisplayName("map");
+    //         descriptor.setExpert(false);
+    //         descriptor.setHidden(false);
+    //         descriptor.setPreferred(true);
+    //         descriptor.setShortDescription("Returns the Map containing the property "
+    //                 + "values. This is done mostly to facilitate accessing the "
+    //                 + "DynaActionForm through JavaBeans accessors, in order to use "
+    //                 + "the JavaServer Pages Standard Tag Library (JSTL).");
+    //         descriptor.setValue(TYPE, Map.class);
+    //         descriptor.setValue(RESOLVABLE_AT_DESIGN_TIME, Boolean.TRUE);
 
-            return Collections.singleton(descriptor).iterator();
-        }
+    //         return Collections.singleton(descriptor).iterator();
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
     /**
      * If the base object is a {@code DynaActionForm}, returns the most

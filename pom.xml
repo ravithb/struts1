@@ -391,8 +391,8 @@
         <jstlImplVersion>3.1.0-M1</jstlImplVersion>
 	    <digesterVersion>2.1</digesterVersion>
         <elVersion>6.1.0-M2</elVersion>
-        <jsfVersion>5.0.0-M2</jsfVersion>
-        <jsfImplVersion>5.0.0-M2</jsfImplVersion>
+        <jsfVersion>3.0.0</jsfVersion>
+        <jsfImplVersion>3.0.5</jsfImplVersion>
         <jaxbVersion>3.0.2</jaxbVersion>
         <junitVersion>6.1.0</junitVersion>
         <fileuploadVersion>2.0.0-M5</fileuploadVersion>        
@@ -519,6 +519,7 @@
         <module>tiles</module>
         <module>tiles2</module>
         <module>el</module>
+        <module>faces</module>
     </modules>
 
     <licenses>

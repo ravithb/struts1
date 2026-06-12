@@ -322,90 +322,90 @@ public class DynaBeanELResolver extends ELResolver {
         return false;
     }
 
-    /**
-     * Returns information about the set of variables or properties that
-     * can be resolved for the given {@code base} object. One use for
-     * this method is to assist tools in auto-completion.
-     *
-     * <p>If the {@code base} parameter is {@code null}, the resolver
-     * must enumerate the list of top-level variables it can resolve.</p>
-     *
-     * <p>The {@code Iterator} returned must contain zero or more
-     * instances of {@link FeatureDescriptor}, in no guaranteed
-     * order. Each info object contains information about a property
-     * in the {@code DynaBean}, as obtained by calling the
-     * {@link org.apache.commons.beanutils.DynaClass#getDynaProperties()}
-     * method. The {@code FeatureDescriptor} is initialized using the same
-     * fields as are present in the {@code DynaProperty}, with the
-     * additional required named attributes "{@code type}" and
-     * "{@code resolvableAtDesignTime}" set as follows:</p>
-     * <ul>
-     *     <li>{@link ELResolver#TYPE} - The runtime type of the property, from
-     *         {link org.apache.commons.beanutils.DynaProperty#getType()}.</li>
-     *     <li>{@link ELResolver#RESOLVABLE_AT_DESIGN_TIME} - {@code true}.</li>
-     * </ul>
-     *
-     * <p>The caller should be aware that the {@code Iterator}
-     * returned might iterate through a very large or even infinitely large
-     * set of properties. Care should be taken by the caller to not get
-     * stuck in an infinite loop.</p>
-     *
-     * <p>This is a "best-effort" list.  Not all {@code ELResolver}s
-     * will return completely accurate results, but all must be callable
-     * at both design-time and runtime (i.e. whether or not
-     * {@link java.beans.Beans#isDesignTime()} returns {@code true}),
-     * without causing errors.</p>
-     *
-     * <p>The {@code propertyResolved} property of the
-     * {@code ELContext} is not relevant to this method.
-     * The results of all {@code ELResolver}s are concatenated
-     * in the case of composite resolvers.</p>
-     *
-     * @param context The context of this evaluation.
-     * @param base The base object whose set of valid properties is to
-     *     be enumerated, or {@code null} to enumerate the set of
-     *     top-level variables that this resolver can evaluate.
-     * @return An {@code Iterator} containing zero or more (possibly
-     *     infinitely more) {@code FeatureDescriptor} objects, or
-     *     {@code null} if this resolver does not handle the given
-     *     {@code base} object or that the results are too complex to
-     *     represent with this method
-     * @see java.beans.FeatureDescriptor
-     */
-    @Override
-    public Iterator<FeatureDescriptor> getFeatureDescriptors(
-            ELContext context,
-            Object base) {
+    // /**
+    //  * Returns information about the set of variables or properties that
+    //  * can be resolved for the given {@code base} object. One use for
+    //  * this method is to assist tools in auto-completion.
+    //  *
+    //  * <p>If the {@code base} parameter is {@code null}, the resolver
+    //  * must enumerate the list of top-level variables it can resolve.</p>
+    //  *
+    //  * <p>The {@code Iterator} returned must contain zero or more
+    //  * instances of {@link FeatureDescriptor}, in no guaranteed
+    //  * order. Each info object contains information about a property
+    //  * in the {@code DynaBean}, as obtained by calling the
+    //  * {@link org.apache.commons.beanutils.DynaClass#getDynaProperties()}
+    //  * method. The {@code FeatureDescriptor} is initialized using the same
+    //  * fields as are present in the {@code DynaProperty}, with the
+    //  * additional required named attributes "{@code type}" and
+    //  * "{@code resolvableAtDesignTime}" set as follows:</p>
+    //  * <ul>
+    //  *     <li>{@link ELResolver#TYPE} - The runtime type of the property, from
+    //  *         {link org.apache.commons.beanutils.DynaProperty#getType()}.</li>
+    //  *     <li>{@link ELResolver#RESOLVABLE_AT_DESIGN_TIME} - {@code true}.</li>
+    //  * </ul>
+    //  *
+    //  * <p>The caller should be aware that the {@code Iterator}
+    //  * returned might iterate through a very large or even infinitely large
+    //  * set of properties. Care should be taken by the caller to not get
+    //  * stuck in an infinite loop.</p>
+    //  *
+    //  * <p>This is a "best-effort" list.  Not all {@code ELResolver}s
+    //  * will return completely accurate results, but all must be callable
+    //  * at both design-time and runtime (i.e. whether or not
+    //  * {@link java.beans.Beans#isDesignTime()} returns {@code true}),
+    //  * without causing errors.</p>
+    //  *
+    //  * <p>The {@code propertyResolved} property of the
+    //  * {@code ELContext} is not relevant to this method.
+    //  * The results of all {@code ELResolver}s are concatenated
+    //  * in the case of composite resolvers.</p>
+    //  *
+    //  * @param context The context of this evaluation.
+    //  * @param base The base object whose set of valid properties is to
+    //  *     be enumerated, or {@code null} to enumerate the set of
+    //  *     top-level variables that this resolver can evaluate.
+    //  * @return An {@code Iterator} containing zero or more (possibly
+    //  *     infinitely more) {@code FeatureDescriptor} objects, or
+    //  *     {@code null} if this resolver does not handle the given
+    //  *     {@code base} object or that the results are too complex to
+    //  *     represent with this method
+    //  * @see java.beans.FeatureDescriptor
+    //  */
+    // @Override
+    // public Iterator<FeatureDescriptor> getFeatureDescriptors(
+    //         ELContext context,
+    //         Object base) {
 
-        if (base instanceof DynaBean) {
-            log.trace("Get Feature-Descriptors for DynaBean '{}'", base);
+    //     if (base instanceof DynaBean) {
+    //         log.trace("Get Feature-Descriptors for DynaBean '{}'", base);
 
-            final DynaBean dynaBean = (DynaBean) base;
-            final DynaProperty[] properties = dynaBean.getDynaClass().getDynaProperties();
+    //         final DynaBean dynaBean = (DynaBean) base;
+    //         final DynaProperty[] properties = dynaBean.getDynaClass().getDynaProperties();
 
-            final int iMax = properties.length;
-            final FeatureDescriptor[] descriptors = new FeatureDescriptor[iMax];
-            for (int i = 0; i < iMax; i++) {
-                final DynaProperty property = properties[i];
+    //         final int iMax = properties.length;
+    //         final FeatureDescriptor[] descriptors = new FeatureDescriptor[iMax];
+    //         for (int i = 0; i < iMax; i++) {
+    //             final DynaProperty property = properties[i];
 
-                final FeatureDescriptor descriptor = new FeatureDescriptor();
-                descriptor.setName(property.getName());
-                descriptor.setDisplayName(property.getName());
-                descriptor.setExpert(false);
-                descriptor.setHidden(false);
-                descriptor.setPreferred(true);
-                descriptor.setShortDescription(null);
-                descriptor.setValue(TYPE, property.getType());
-                descriptor.setValue(RESOLVABLE_AT_DESIGN_TIME, Boolean.TRUE);
+    //             final FeatureDescriptor descriptor = new FeatureDescriptor();
+    //             descriptor.setName(property.getName());
+    //             descriptor.setDisplayName(property.getName());
+    //             descriptor.setExpert(false);
+    //             descriptor.setHidden(false);
+    //             descriptor.setPreferred(true);
+    //             descriptor.setShortDescription(null);
+    //             descriptor.setValue(TYPE, property.getType());
+    //             descriptor.setValue(RESOLVABLE_AT_DESIGN_TIME, Boolean.TRUE);
 
-                descriptors[i] = descriptor;
-            }
+    //             descriptors[i] = descriptor;
+    //         }
 
-            return Arrays.asList(descriptors).iterator();
-        }
+    //         return Arrays.asList(descriptors).iterator();
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
     /**
      * If the base object is a {@code DynaBean}, returns the most
