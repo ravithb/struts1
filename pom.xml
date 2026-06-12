@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.weblegacy</groupId>
     <artifactId>struts-parent</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.7</version>
     <packaging>pom</packaging>
     <name>Struts 1</name>
     <url>https://weblegacy.github.io/struts1</url>
@@ -371,6 +371,7 @@
     </issueManagement>
 
     <properties>
+        <moduleParentVersion>1.7.6</moduleParentVersion>
         <sourceEncoding>UTF-8</sourceEncoding>
         <propertiesEncoding>ISO-8859-1</propertiesEncoding>
         <project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
