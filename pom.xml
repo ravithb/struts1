@@ -518,6 +518,7 @@
         <module>taglib</module>
         <module>tiles</module>
         <module>tiles2</module>
+        <module>el</module>
     </modules>
 
     <licenses>
